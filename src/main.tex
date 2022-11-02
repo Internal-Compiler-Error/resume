@@ -1,0 +1,204 @@
+\documentclass[letterpaper, 11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontspec}
+
+\setmainfont{EB Garamond}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+    \item\small{
+            {#1 \vspace{-2pt}}
+    }
+}
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}       & #2                 \\
+        \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+\begin{document}
+\begin{center}
+\textbf{\Huge Liang Wang} \\ \vspace{1pt}
+\small 647-785-5604 |
+\href{mailto:liang.wang.ice@gmail.com}{\underline{liang.wang.ice@gmail.com}}  |
+\href{https://github.com/Internal-Compiler-Error}{\underline{github.com/Internal-Compiler-Error}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading{University of Guelph}{Guelph, ON}{Bachelor of Computing, Computer Science, GPA: 3.7/4.0 (81.4\% cumulative)}{Sep. 2020 -- Apr. 2025 (expected)}
+\resumeSubHeadingListEnd
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Languages}{: Rust, Java, C++, C, Python, JavaScript, TypeScript, HTML, CSS, SQL} \\
+\textbf{Frameworks/Libraries}{: Tokio, Serde, Spring, React, Angular, Node., Nestjs, jest} \\
+\textbf{Developer Tools}{: Docker, Git, Google Cloud Platform, Firebase, Address Sanitizer} \\
+}}
+\end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Software Developer, Co-op}{Sep. 2022 -- Dec. 2022}
+{Interac Corp.}{Kitchener, ON}
+\resumeItemListStart
+\resumeItem{Developing and testing a proof of concept API set for financial institutions to securely exchange sensitive data}
+\resumeItem{Tasked to research and develop a distributed system for mutually distrusting parties to verify and monitor financial information, improving correctness and efficiency}
+\resumeItemListEnd
+
+\resumeSubheading
+{Undergraduate Research Assistant}{Oct. 2021 -- Mar. 2022}
+{University of Guelph, Department of Engineering}{Guelph, ON}
+\resumeItemListStart
+\resumeItem{Developed a digital twin solution that allows for real time monitoring of a manufacturing system using C++, React, and Firebase to improve observability and prevent malfunctions}
+\resumeItem{Devices backed through Google IoT Core with Pub/Sub as reliable data delivery pipeline}
+\resumeItem{Implemented a react-based dashboard showing real time status of the manufacturing system}
+\resumeItemListEnd
+
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+\resumeSubheading
+{Software Developer, Co-op}{Dec. 2018 -- Jun. 2019}
+{DM\&T Service LTD.}{Richmond Hill, ON}
+\resumeItemListStart
+\resumeItem{Developed a contact form allowing users to enter their information on a website to be recorded in a database}
+\resumeItem{Developed a full stack application that shows the location and other information of snow removal trucks}
+\resumeItem{Both developed with Java Spring as back-end, Angular as front-end and mariaDB as the database}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{midwest\_mainline} $|$ \emph{Rust, Tokio}}{\href{https://github.com/Internal-Compiler-Error/midwest_mainline}{\textit{Repository Link}}}
+\resumeItemListStart
+\resumeItem{An implemenation of the BitTorrent \href{https://www.bittorrent.org/beps/bep_0005.html}{mainline Distributed Hash Table (DHT)} using fully async network calls}
+\resumeItem{Performs \texttt{ping}, \texttt{find\_node}, \texttt{get\_peers}, and \texttt{announce\_peer} conforming to the specification}
+\resumeItem{Provides basic mitigation against malicious requests and denial of service attacks by strictly specifying allowed message variants, and using bounded channels}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{juicy\_bencode} $|$ \emph{Rust, Nom}}{ \href{https://crates.io/crates/juicy_bencode}{\textit{Repository Link}}}
+\resumeItemListStart
+\resumeItem{A parser that transforms raw data encoded using \href{https://www.bittorrent.org/beps/bep_0003.html\#bencoding}{bencoding} (data description schema similar to JSON) into a tree using the \href{https://crates.io/crates/nom}{Nom} parser combinator library}
+\resumeItem{Utilizing Rust's compile-time guaranteed reference safety and Nom's design, the entire tree is generated without copying any buffers}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Argon} $|$ \emph{C++ 17, GTK(gtkmm), httplib, CMake}}{\href{https://github.com/Internal-Compiler-Error/Argon}{\textit{Repository Link}}}
+\resumeItemListStart
+\resumeItem{Speeds up HTTP(S) downloads from default browser behaviour}
+\resumeItem{Splits downloads into multiple segments to perform in parallel, bypassing throttling and exploiting modern hardware}
+\resumeItem{Able to fully saturate system bandwidth due to each segment being processed by different cores with almost no locks required}
+\resumeItemListEnd
+
+
+% \resumeProjectHeading
+%   {\textbf{sulfur (ongoing)} $|$ \emph{Rust, Tokio, Diesel}}{\href{https://github.com/Internal-Compiler-Error/sulfur}{\textit{Repository Link}}}
+%   \resumeItemListStart
+%     \resumeItem{A HTTP(S) (implemented) and BitTorrent (yet to be implemented) client with complete front-end---back-end separation using REST as the communication convention, allowing GUIs to be developed indepedent of core logic}
+%     % \resumeItem{HTTP(S) downloads are split into current segments to prevent host rate limiting or TCP sliding window performing inefficiently}
+%     \resumeItem{All IO calls are asynchronous, no extra threads are spawned for blocking or waiting}
+%     \resumeItem{Download states are persisted via SQLite to allow resumption}
+%   \resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{ePortfolio} $|$ \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\textit{Repository Link}}}
+\resumeItemListStart
+\resumeItem{Allows user to manage their mutual fund and stocks, supporting creating, querying, updating and deleting investments in a GUI application}
+\resumeItem{Querying is backed by an index to achieve amortized $O(|Q| + |W|)$ look up where $Q$ is the set of words in the query and $W$ is the set of investments containing words in $K$}
+\resumeItem{Utilized OOP techniques such as polymorphism, inheritance, composition and encapsulation to reduce duplicate code and improve logic flow}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+% \section{AWARDS}
+%     \resumeSubHeadingListStart
+%         \resumeSubheading
+%             {Dean's List}{Sep 2020 -- Dec 2021}
+%             {Awarded to those who achieved 80\% or more in a given semester}{Guelph, ON}
+%     \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
