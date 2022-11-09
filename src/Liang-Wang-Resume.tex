@@ -80,17 +80,18 @@
 
 \begin{document}
 \begin{center}
-\textbf{\Huge Liang Wang} \\ \vspace{1pt}
+\textbf{\Huge \color{ForestGreen}{Liang Wang}} \\ \vspace{1pt}
 \small 647-785-5604 |
-\href{mailto:liang.wang.ice@gmail.com}{\underline{liang.wang.ice@gmail.com}}  |
-\href{https://github.com/Internal-Compiler-Error}{\underline{github.com/Internal-Compiler-Error}}
+\href{mailto:liang.wang.ice@gmail.com}{\underline{\color{BlueViolet}{liang.wang.ice@gmail.com}}}  |
+\href{https://github.com/Internal-Compiler-Error}{\underline{\color{BlueViolet}{GitHub}}} |
+\href{https://www.linkedin.com/in/liang-wang-225607174/}{\underline{\color{BlueViolet}{LinkedIn}}} \\
 \end{center}
 
 
 %-----------EDUCATION-----------
 \section{Education}
 \resumeSubHeadingListStart
-\resumeSubheading{University of Guelph}{Guelph, ON}{Bachelor of Computing, Computer Science, GPA: 3.7/4.0 (81.4\% cumulative)}{Sep. 2020 -- Apr. 2025 (expected)}
+\resumeSubheading{University of Guelph}{Set. 2020 -- Apr. 2025 (expected)}{Bachelor of Computing (Co-op Honors), Computer Science, GPA: 3.7/4.0 (81.4\% cumulative)}{Guelph, ON}
 \resumeSubHeadingListEnd
 
 
@@ -100,7 +101,7 @@
 \begin{itemize}[leftmargin=0.15in, label={}]
 \small{\item{
 \textbf{Languages}{: Rust, Java, C++, C, Python, JavaScript, TypeScript, HTML, CSS, SQL} \\
-\textbf{Frameworks/Libraries}{: Tokio, Serde, Spring, React, Angular, Node., Nestjs, jest} \\
+\textbf{Frameworks/Libraries}{: Tokio, Serde, Spring, React, Angular, Node.js, Nestjs, jest, TypeOrm} \\
 \textbf{Developer Tools}{: Docker, Git, Google Cloud Platform, Firebase, Address Sanitizer} \\
 }}
 \end{itemize}
@@ -110,63 +111,55 @@
 \section{Experience}
 \resumeSubHeadingListStart
 \resumeSubheading
-{Software Developer, Co-op}{Sep. 2022 -- Dec. 2022}
-{Interac Corp.}{Kitchener, ON}
+{\color{Salmon}{Software Developer, Co-op}}{Sep. 2022 -- Dec. 2022}
+{\href{https://www.interac.ca/en/}{\color{BlueViolet}Interac}}{Kitchener, ON}
 \resumeItemListStart
-\resumeItem{Developing and testing a proof of concept API set for financial institutions to securely exchange sensitive data}
-\resumeItem{Tasked to research and develop a distributed system for mutually distrusting parties to verify and monitor financial information, improving correctness and efficiency}
+\resumeItem{Developing and testing a minimum viable environment for financial institutions to securely exchange sensitive data}
+\resumeItem{Tasked to research and develop a distributed system for mutually distrusting parties to verify and monitor
+financial information, improving correctness, and lowering cost}
 \resumeItemListEnd
 
 \resumeSubheading
-{Undergraduate Research Assistant}{Oct. 2021 -- Mar. 2022}
-{University of Guelph, Department of Engineering}{Guelph, ON}
+{\color{Salmon}{Undergraduate Research Assistant}} {Oct. 2021 -- Mar. 2022}
+{\href{https://www.uoguelph.ca/engineering/}{\color{BlueViolet}{University of Guelph, Department of Engineering}}}{Guelph, ON}
 \resumeItemListStart
 \resumeItem{Developed a digital twin solution that allows for real time monitoring of a manufacturing system using C++, React, and Firebase to improve observability and prevent malfunctions}
 \resumeItem{Devices backed through Google IoT Core with Pub/Sub as reliable data delivery pipeline}
 \resumeItem{Implemented a react-based dashboard showing real time status of the manufacturing system}
 \resumeItemListEnd
 
-% -----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
 \resumeSubheading
-{Software Developer, Co-op}{Dec. 2018 -- Jun. 2019}
-{DM\&T Service LTD.}{Richmond Hill, ON}
+{\color{Salmon}{Software Developer, Co-op}}{Dec. 2018 -- Jun. 2019}
+{\href{https://www.dmtserv.com/}{\color{BlueViolet}{DM\&T Service LTD.}}}{Richmond Hill, ON}
 \resumeItemListStart
 \resumeItem{Developed a contact form allowing users to enter their information on a website to be recorded in a database}
-\resumeItem{Developed a full stack application that shows the location and other information of snow removal trucks}
+\resumeItem{Developed a full stack application that shows the location and other information of 80+ snow removal trucks
+in real time}
 \resumeItem{Both developed with Java Spring as back-end, Angular as front-end and mariaDB as the database}
 \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------
-\section{Projects}
+\section{Personal Projects}
 \resumeSubHeadingListStart
 \resumeProjectHeading
-{\textbf{midwest\_mainline} $|$ \emph{Rust, Tokio}}{\href{https://github.com/Internal-Compiler-Error/midwest_mainline}{\textit{Repository Link}}}
+{\textbf{midwest\_mainline} $|$ \emph{Rust, Tokio}}{\href{https://github.com/Internal-Compiler-Error/midwest_mainline}{\textit{\color{BlueViolet}{Repository Link}}}}
 \resumeItemListStart
-\resumeItem{An implemenation of the BitTorrent \href{https://www.bittorrent.org/beps/bep_0005.html}{mainline Distributed Hash Table (DHT)} using fully async network calls}
-\resumeItem{Performs \texttt{ping}, \texttt{find\_node}, \texttt{get\_peers}, and \texttt{announce\_peer} conforming to the specification}
+\resumeItem{An implemenation of the BitTorrent \href{https://www.bittorrent.org/beps/bep_0005.html}{\color{BlueViolet}{mainline Distributed Hash Table (DHT)}} using fully async network calls}
+\resumeItem{Performs \texttt{ping}, \texttt{find\_node}, \texttt{get\_peers}, and \texttt{announce\_peer} RPCs, conforming to the specification}
 \resumeItem{Provides basic mitigation against malicious requests and denial of service attacks by strictly specifying allowed message variants, and using bounded channels}
 \resumeItemListEnd
 
 \resumeProjectHeading
-{\textbf{juicy\_bencode} $|$ \emph{Rust, Nom}}{ \href{https://crates.io/crates/juicy_bencode}{\textit{Repository Link}}}
+{\textbf{juicy\_bencode} $|$ \emph{Rust, Nom}}{ \href{https://crates.io/crates/juicy_bencode}{\textit{\color{BlueViolet}{Repository Link}}}}
 \resumeItemListStart
 \resumeItem{A parser that transforms raw data encoded using \href{https://www.bittorrent.org/beps/bep_0003.html\#bencoding}{bencoding} (data description schema similar to JSON) into a tree using the \href{https://crates.io/crates/nom}{Nom} parser combinator library}
 \resumeItem{Utilizing Rust's compile-time guaranteed reference safety and Nom's design, the entire tree is generated without copying any buffers}
 \resumeItemListEnd
 
 \resumeProjectHeading
-{\textbf{Argon} $|$ \emph{C++ 17, GTK(gtkmm), httplib, CMake}}{\href{https://github.com/Internal-Compiler-Error/Argon}{\textit{Repository Link}}}
+{\textbf{Argon} $|$ \emph{C++ 17, GTK(gtkmm), httplib, CMake}}{\href{https://github.com/Internal-Compiler-Error/Argon}{\textit{\color{BlueViolet}{Repository Link}}}}
 \resumeItemListStart
 \resumeItem{Speeds up HTTP(S) downloads from default browser behaviour}
 \resumeItem{Splits downloads into multiple segments to perform in parallel, bypassing throttling and exploiting modern hardware}
@@ -175,7 +168,7 @@
 
 
 % \resumeProjectHeading
-%   {\textbf{sulfur (ongoing)} $|$ \emph{Rust, Tokio, Diesel}}{\href{https://github.com/Internal-Compiler-Error/sulfur}{\textit{Repository Link}}}
+%   {\textbf{sulfur (ongoing)} $|$ \emph{Rust, Tokio, Diesel}}{\href{https://github.com/Internal-Compiler-Error/sulfur}{\textit{\color{BlueViolet}{Repository Link}}}}
 %   \resumeItemListStart
 %     \resumeItem{A HTTP(S) (implemented) and BitTorrent (yet to be implemented) client with complete front-end---back-end separation using REST as the communication convention, allowing GUIs to be developed indepedent of core logic}
 %     % \resumeItem{HTTP(S) downloads are split into current segments to prevent host rate limiting or TCP sliding window performing inefficiently}
@@ -184,7 +177,7 @@
 %   \resumeItemListEnd
 
 \resumeProjectHeading
-{\textbf{ePortfolio} $|$ \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\textit{Repository Link}}}
+{\textbf{ePortfolio} $|$ \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\textit{\color{BlueViolet}{Repository Link}}}}
 \resumeItemListStart
 \resumeItem{Allows user to manage their mutual fund and stocks, supporting creating, querying, updating and deleting investments in a GUI application}
 \resumeItem{Querying is backed by an index to achieve amortized $O(|Q| + |W|)$ look up where $Q$ is the set of words in the query and $W$ is the set of investments containing words in $K$}
