@@ -1,215 +1,201 @@
-\documentclass[letterpaper, 11pt]{article}
+\documentclass[letterpaper, 10pt]{article}
 
 \usepackage[empty]{fullpage}
+\usepackage[letterpaper, margin=0.5in]{geometry}
 \usepackage{titlesec}
-\usepackage[usenames,dvipsnames]{color}
+\usepackage[usenames, dvipsnames]{xcolor}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{fontspec}
-%\usepackage{graphicx}
+\usepackage{graphicx}
 \usepackage[export]{adjustbox}
+\usepackage{pagecolor}
+\usepackage{moresize}
 
-%\setmainfont{EB Garamond}
+\definecolor{Cream}{HTML}{FEFCF6}
+\definecolor{Cerulean}{HTML}{086788}
+\definecolor{Pink}{HTML}{EF476F}
+\definecolor{Mint}{HTML}{17B890}
+\definecolor{FederalBlue}{HTML}{1A936F}
+\setmainfont{EB Garamond}
 
-\setmainfont{EBGaraMond08}[
-    Extension = .ttf,
-    UprightFont = *-Regular,
-    ItalicFont = *-Italic
-]
-\setmonofont{Inconsolata-Medium}[
-    Extension = .ttf,
-    Path = static/Inconsolata/
-]
-%\setmonofont{Inconsolata_Condensed-Medium}[
-%    Extension = .ttf,
-%    Path = static/Inconsolata_Condensed/
-%]
+\hypersetup{
+    pdfborder={0 1 1},
+    colorlinks=true,
+    urlcolor=FederalBlue,
+    pdftitle={Liang Wang Resume},
+    pdfauthor={Liang Wang},
+}
+
+% \setmonofont{Inconsolata-Medium}[
+%     Extension = .ttf,
+%     Path = static/Inconsolata/
+% ]
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\renewcommand{\headrulewidth}{0em}
+\renewcommand{\footrulewidth}{0em}
 
-\urlstyle{same}
 
-\raggedbottom
+\graphicspath{{img/}}
+
+%\raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
+\setlength{\footskip}{3.60004pt}
 
 % Sections formatting
-\titleformat{\section}{
-    \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\titleformat
+{\section}
+{\color{Cerulean}\vspace{-1em}\bfseries\raggedright\Large}
+{}
+{0em}
+{}
+[\color{Black}\titlerule\vspace{-0.5em}]
 
-
-%-------------------------
 % Custom commands
-\newcommand{\resumeItem}[1]{
-    \item\small{
-            {#1 \vspace{-2pt}}
-    }
-}
-
 \newcommand{\resumeSubheading}[4]{
-    \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    % \vspace{-0.6em}
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{#1}       & #2                 \\
-        \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+        \textit{\small#3} & \textit{\small#4} \\
+    \end{tabular*}\vspace{-0.7em}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-        \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{\small#1} & \textit{\small#2} \\
+    \end{tabular*}\vspace{-0.7em}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
         \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-1.5em}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
+\newenvironment{SubHeading}{
+    \begin{itemize}[leftmargin=0.15in]
+        \setlength\itemsep{-0.3em}
+        }{
+    \end{itemize}}
 
+\newenvironment{ResumeItem}{
+    \vspace{-0.5em}
+    \begin{itemize}
+        \setlength\itemsep{-0.3em}
+        }{
+    \end{itemize}\vspace{-0.3em}}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+% to typeset C++ logo correctly
+\newcommand{\cxx}{C\nolinebreak\hspace{-.05em}\raisebox{0.2ex}{\bf +}\nolinebreak\hspace{-.05em}\raisebox{.2ex}{\bf +}}
 
-
+\pagecolor{Cream}
 \begin{document}
-\begin{center}
-\textbf{\Huge \color{ForestGreen}{Liang Wang}} \\ \vspace{1pt}
-\small Guelph, ON |
- 647-785-5604 |
-\href{mailto:liang.wang.ice@gmail.com}{{\color{BlueViolet}{liang.wang.ice@gmail.com}}}  |
-\href{https://github.com/Internal-Compiler-Error}{{\color{BlueViolet}{GitHub}}} |
-\href{https://www.linkedin.com/in/liang-wang-225607174/}{{\color{BlueViolet}{LinkedIn}}} \\
-\end{center}
 
+    \begin{center}
+        \textbf{\HUGE\color{Pink}{Liang Wang}} \\ \vspace{1.5em}
+        \small Guelph, ON |
+        647-785-5604 |
+        \href{mailto:liang.wang.ice@gmail.com}{{liang.wang.ice@gmail.com}}  |
+        \href{https://github.com/Internal-Compiler-Error}{{GitHub}} |
+        \href{https://www.linkedin.com/in/liang-wang-225607174/}{{LinkedIn}} \\
+    \end{center}
 
 %-----------EDUCATION-----------
-\section{Education}
-\resumeSubHeadingListStart
-\resumeSubheading{University of Guelph}{Sep. 2020 -- Apr. 2025 (expected)}{Bachelor of Computing (Co-op Honors), Computer Science, GPA: 3.7/4.0 (81.4\% cumulative)}{Guelph, ON}
-\resumeSubHeadingListEnd
+    \section{Education}
+    \resumeSubheading{University of Guelph}{Sep. 2020 -- Apr. 2025 (expected)}{Bachelor of Computing (Co-op Honors), Computer Science, Cumulative GPA: 3.7/4.0 (84.625\%)}{Guelph, ON}
 
 
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
-\begin{itemize}[leftmargin=0.15in, label={}]
-\small{\item{
-\textbf{Languages}{: Rust, Java, C++, C, Python, JavaScript, TypeScript, HTML, CSS, SQL} \\
-\textbf{Frameworks/Libraries}{: Tokio, Serde, Spring, React, React Native, Angular, Node.js, Nestjs, jest, TypeOrm} \\
-\textbf{Developer Tools}{: Docker, Git, Google Cloud Platform, Firebase, Address Sanitizer} \\
-}}
-\end{itemize}
+%-----------TECHNICAL SKILLS-----------
+    \section{Technical Skills}
+    \vspace{0.1em}
+    \begin{itemize}[leftmargin=0em, label={}]
+        \small{\item{
+            \textbf{Languages}{: Rust, Java, \cxx, C, Python, JavaScript, TypeScript, HTML, CSS, SQL} \\
+            \textbf{Frameworks/Libraries}{: Tokio, Serde, Spring, React, React Native, Angular, Node.js, Nestjs, jest, TypeOrm} \\
+            \textbf{Developer Tools}{: Docker, Git, Google Cloud Platform, Firebase, Address Sanitizer} \\
+        }}
+    \end{itemize}
 
 
 %-----------EXPERIENCE-----------
-\section{Experience}
-\resumeSubHeadingListStart
-\resumeSubheading
-{\color{Black}{Software Developer, Co-op}}{Sep. 2022 -- Dec. 2022}
-{\href{https://www.interac.ca/en/}{\color{BlueViolet}Interac}}{Kitchener, ON}
-\resumeItemListStart
-\resumeItem{Developed and tested a minimum viable environment for individuals and financial institutions to securely exchange sensitive data}
-\resumeItem{Integrated existing APIs onto a React Native application with the minimum viable environment above}
-\resumeItem{Researched and developed a blockchain-based system for exploring the potentials of digitalizing cash transactions,
-aiming to improve correctness, and lower cost}
-\resumeItemListEnd
+    \section{Experience}
 
-\resumeSubheading
-{\color{Black}{Undergraduate Research Assistant}} {Oct. 2021 -- Mar. 2022}
-{\href{https://www.uoguelph.ca/engineering/}{\color{BlueViolet}{University of Guelph, Department of Engineering}}}{Guelph, ON}
-\resumeItemListStart
-\resumeItem{Developed a digital twin solution that allows for real time monitoring of a manufacturing system using C++, React, and Firebase to improve observability and prevent malfunctions}
-\resumeItem{Devices backed through Google IoT Core with Pub/Sub as reliable data delivery pipeline}
-\resumeItem{Implemented a react-based dashboard showing real time status of the manufacturing system}
-\resumeItemListEnd
+    \resumeSubheading
+    {Software Developer, Co-op}{May. 2023 -- Sep. 2023}
+    {\href{https://kingsds.network/}{Distributive}}{Kingston, ON}
+    \begin{ResumeItem}
+        \item{Worked on a distributed system for allowing edge devices to compute in parallel, potentially using on premise hardware}
+        \item{Implemented transparent WebGPU usage metrics tracking, opening up the ability to utilize WebGPU for edge computing}
+        \item{Diagnosed and fixed longstanding concurrency bugs with DB connections, increasing system throughput \emph{up to 10 fold}}
+    \end{ResumeItem}
 
-\resumeSubheading
-{\color{Black}{Innovation Software Developer, Co-op}}{Dec. 2018 -- Jun. 2019}
-{\href{https://www.dmtserv.com/}{\color{BlueViolet}{DM\&T Service LTD.}}}{Richmond Hill, ON}
-\resumeItemListStart
-\resumeItem{Developed a contact form allowing users to enter their information on a website to be recorded in a database}
-\resumeItem{Implemented a full stack application that shows the location and status of 80+ snow removal trucks
-in real time}
-\resumeItem{Both built with Java Spring as back-end, Angular as front-end and mariaDB as the database}
-\resumeItemListEnd
-\resumeSubHeadingListEnd
+    \resumeSubheading
+    {\color{Black}{Software Developer, Co-op}}{Sep. 2022 -- Dec. 2022}
+    {\href{https://www.interac.ca/en/}{Interac}}{Kitchener, ON}
+    \begin{ResumeItem}
+        \item{Developed and tested a minimum viable environment for individuals and financial institutions to securely exchange sensitive data}
+        \item{Integrated existing APIs onto a React Native application with the minimum viable environment above}
+        \item{Researched and developed a blockchain-based system for exploring the potentials of digitalizing cash transactions, aiming to improve correctness, and lower cost}
+    \end{ResumeItem}
+
+
+    \resumeSubheading
+    {\color{Black}{Undergraduate Research Assistant}} {Oct. 2021 -- Mar. 2022}
+    {\href{https://www.uoguelph.ca/engineering/}{University of Guelph, Department of Engineering}}{Guelph, ON}
+
+    \begin{ResumeItem}
+        \item{Developed a digital twin solution that allows for real time monitoring of a manufacturing system using \cxx, React, and Firebase to improve observability and prevent malfunctions}
+        \item{Devices backed through Google IoT Core with Pub/Sub as reliable data delivery pipeline}
+        \item{Implemented a react-based dashboard showing real time status of the manufacturing system}
+    \end{ResumeItem}
+
+
+
+    \resumeSubheading
+    {\color{Black}{Software Developer, Co-op}}{Dec. 2018 -- Jun. 2019}
+    {\href{https://www.dmtserv.com/}{DM\&T Service LTD.}}{Richmond Hill, ON}
+    \begin{ResumeItem}
+        \item{Developed a contact form allowing users to enter their information on a website to be recorded in a database}
+        \item{Implemented a full stack application that shows the location and status of 80+ snow removal trucks in real time}
+        \item{Both built with Java Spring as back-end, Angular as front-end and mariaDB as the database}
+    \end{ResumeItem}
 
 
 %-----------PROJECTS-----------
-\section{Personal Projects}
-\resumeSubHeadingListStart
-\resumeProjectHeading
-{\textbf{midwest\_mainline} $|$ \emph{Rust, Tokio}}{\href{https://github.com/Internal-Compiler-Error/midwest_mainline}{\textit{\color{BlueViolet} {\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
-\resumeItemListStart
-\resumeItem{A library implementation of the BitTorrent \href{https://www.bittorrent.org/beps/bep_0005.html}{\color{BlueViolet}{mainline Distributed Hash Table (DHT)}} using fully async network calls}
-\resumeItem{Performs \texttt{ping}, \texttt{find\_node}, \texttt{get\_peers}, and \texttt{announce\_peer} RPCs, conforming to the specification}
-\resumeItem{Provides basic mitigation against malicious requests and denial of service attacks by strictly specifying allowed message variants, and using bounded channels}
-\resumeItemListEnd
+    \section{Personal Projects}
+    \resumeProjectHeading
+    {\textbf{midwest\_mainline} $|$ \emph{Rust, Tokio}}{\href{https://github.com/Internal-Compiler-Error/midwest_mainline}{\textit{{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
 
-\resumeProjectHeading
-{\textbf{juicy\_bencode} $|$ \emph{Rust, Nom}}{ \href{https://crates.io/crates/juicy_bencode}{\textit{\color{BlueViolet} {\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
-\resumeItemListStart
-\resumeItem{A parser that transforms raw data encoded using \href{https://www.bittorrent.org/beps/bep_0003.html\#bencoding}{bencoding} (data description schema similar to JSON) into a tree using the \href{https://crates.io/crates/nom}{Nom} parser combinator library}
-\resumeItem{Utilizing Rust's compile-time guaranteed reference safety and Nom's design, the entire tree is generated without copying any buffers}
-\resumeItemListEnd
+    \begin{ResumeItem}
+        \item{A library implementation of the BitTorrent \href{https://www.bittorrent.org/beps/bep_0005.html}{mainline Distributed Hash Table (DHT)} using fully async network calls}
+        \item{Performs \texttt{ping}, \texttt{find\_node}, \texttt{get\_peers}, and \texttt{announce\_peer} RPCs, conforming to the specification}
+        \item{Provides basic mitigation against malicious requests and denial of service attacks by strictly specifying allowed message variants, and using bounded channels}
+    \end{ResumeItem}
 
-\resumeProjectHeading
-{\textbf{Argon} $|$ \emph{C++ 17, GTK(gtkmm), httplib, CMake}}{\href{https://github.com/Internal-Compiler-Error/Argon}{\textit{\color{BlueViolet} {\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
-\resumeItemListStart
-\resumeItem{Speeds up HTTP(S) downloads from default browser behaviour}
-\resumeItem{Splits downloads into multiple segments to perform in parallel, bypassing throttling and exploiting modern hardware}
-\resumeItem{Able to fully saturate system bandwidth due to each segment being processed by different cores with almost no locks required}
-\resumeItemListEnd
+    \resumeProjectHeading
+    {\textbf{Argon} $|$ \emph{\cxx 17, GTK(gtkmm), httplib, CMake}}{\href{https://github.com/Internal-Compiler-Error/Argon}{\textit{{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
+    \begin{ResumeItem}
+        \item{Speeds up HTTP(S) downloads from default browser behaviour}
+        \item{Splits downloads into multiple segments to perform in parallel, bypassing throttling and exploiting modern hardware}
+        \item{Able to fully saturate system bandwidth due to each segment being processed by different cores with almost no locks required}
+    \end{ResumeItem}
 
 
-% \resumeProjectHeading
-%   {\textbf{sulfur (ongoing)} $|$ \emph{Rust, Tokio, Diesel}}{\href{https://github.com/Internal-Compiler-Error/sulfur}{\textit{\color{BlueViolet}{Repository Link}}}}
-%   \resumeItemListStart
-%     \resumeItem{A HTTP(S) (implemented) and BitTorrent (yet to be implemented) client with complete front-end---back-end separation using REST as the communication convention, allowing GUIs to be developed indepedent of core logic}
-%     % \resumeItem{HTTP(S) downloads are split into current segments to prevent host rate limiting or TCP sliding window performing inefficiently}
-%     \resumeItem{All IO calls are asynchronous, no extra threads are spawned for blocking or waiting}
-%     \resumeItem{Download states are persisted via SQLite to allow resumption}
-%   \resumeItemListEnd
-
-\resumeProjectHeading
-{\textbf{ePortfolio} $|$ \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\textit{\color{BlueViolet} {\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
-\resumeItemListStart
-\resumeItem{Allows user to manage their mutual fund and stocks, supporting creating, querying, updating and deleting investments in a GUI application}
-\resumeItem{Querying is backed by an index to achieve amortized $O(|Q| + |W|)$ look up where $Q$ is the set of words in the query and $W$ is the set of investments containing words in $K$}
-\resumeItem{Utilized OOP techniques such as polymorphism, inheritance, composition and encapsulation to reduce duplicate code and improve logic flow}
-\resumeItemListEnd
-\resumeSubHeadingListEnd
-
-
-% \section{AWARDS}
-%     \resumeSubHeadingListStart
-%         \resumeSubheading
-%             {Dean's List}{Sep 2020 -- Dec 2021}
-%             {Awarded to those who achieved 80\% or more in a given semester}{Guelph, ON}
-%     \resumeSubHeadingListEnd
-
-%-------------------------------------------
+    \resumeProjectHeading
+    {\textbf{ePortfolio} $|$ \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\itshape\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}
+    \begin{ResumeItem}
+        \item{Allows user to manage their mutual fund and stocks, supporting creating, querying, updating and deleting investments in a GUI application}
+        \item{Querying is backed by an index to achieve amortized $O(|Q| + |W|)$ look up where $Q$ is the set of words in the query and $W$ is the set of investments containing words in $K$}
+        \item{Utilized OOP techniques such as polymorphism, inheritance, composition and encapsulation to reduce duplicate code and improve logic flow}
+    \end{ResumeItem}
 \end{document}
