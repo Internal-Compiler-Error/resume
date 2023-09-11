@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{fontspec}
+\usepackage[no-math]{fontspec}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \usepackage{pagecolor}
@@ -89,7 +89,7 @@
     \end{itemize}}
 
 \newenvironment{ResumeItem}{
-    \vspace{-0.5em}
+    \vspace{-0.4em}
     \begin{itemize}
         \setlength\itemsep{-0.3em}
         }{
@@ -122,7 +122,7 @@
         \small{\item{
             \textbf{Languages}{: Rust, Java, \cxx, C, Python, JavaScript, TypeScript, HTML, CSS, SQL} \\
             \textbf{Frameworks/Libraries}{: Tokio, Serde, Spring, React, React Native, Angular, Node.js, Nestjs, jest, TypeOrm} \\
-            \textbf{Developer Tools}{: Docker, Git, Google Cloud Platform, Firebase, Address Sanitizer} \\
+            \textbf{Developer Tools}{: Docker, Git, Google Cloud Platform, Firebase, Address Sanitizer, General Unix CLIs} \\
         }}
     \end{itemize}
 
@@ -131,12 +131,20 @@
     \section{Experience}
 
     \resumeSubheading
-    {Software Developer, Co-op}{May. 2023 -- Sep. 2023}
+    {Undergraduate Research Assistant}{Sep. 2023 -- Dec. 2023}
+    {\href{https://www.uoguelph.ca/computing}{Department of Computer Science}}{Guelph, ON}
+    \begin{center}
+        \textit{Investigation of the effectiveness of UI designs in the presence of situational vision impairments (SVIs), and human perception of contrast and color}
+    \end{center}
+
+    \resumeSubheading
+    {Software Developer, Co-op}{May. 2023 -- Aug. 2023}
     {\href{https://kingsds.network/}{Distributive}}{Kingston, ON}
     \begin{ResumeItem}
-        \item{Worked on a distributed system for allowing edge devices to compute in parallel, potentially using on premise hardware}
-        \item{Implemented transparent WebGPU usage metrics tracking, opening up the ability to utilize WebGPU for edge computing}
-        \item{Diagnosed and fixed longstanding concurrency bugs with DB connections, increasing system throughput \emph{up to 10 fold}}
+        \item{Worked on a system for allowing edge devices to compute together in parallel, bringing cheap and private computing to the masses}
+        \item{Implemented transparent WebGPU usage metrics tracking system, opening up the ability to utilize web browsers for GPGPU such as AI inferencing}
+        \item{Diagnosed and fixed longstanding concurrency bugs with DB connections, increasing system throughput \emph{up to 10$\times$}}
+        \item{Investigated and repaired flaky tests, reducing CI build time by \emph{up to 20 minutes}}
     \end{ResumeItem}
 
     \resumeSubheading
@@ -191,11 +199,11 @@
     \end{ResumeItem}
 
 
-    \resumeProjectHeading
-    {\textbf{ePortfolio} $|$ \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\itshape\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}
-    \begin{ResumeItem}
-        \item{Allows user to manage their mutual fund and stocks, supporting creating, querying, updating and deleting investments in a GUI application}
-        \item{Querying is backed by an index to achieve amortized $O(|Q| + |W|)$ look up where $Q$ is the set of words in the query and $W$ is the set of investments containing words in $K$}
-        \item{Utilized OOP techniques such as polymorphism, inheritance, composition and encapsulation to reduce duplicate code and improve logic flow}
-    \end{ResumeItem}
+    % \resumeProjectHeading
+    % {\textbf{ePortfolio} $|$ \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\itshape\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}
+    % \begin{ResumeItem}
+    %     \item{Allows user to manage their mutual fund and stocks, supporting creating, querying, updating and deleting investments in a GUI application}
+    %     \item{Querying is backed by an index to achieve amortized $O(|Q| + |W|)$ look up where $Q$ is the set of words in the query and $W$ is the set of investments containing words in $K$}
+    %     \item{Utilized OOP techniques such as polymorphism, inheritance, composition and encapsulation to reduce duplicate code and improve logic flow}
+    % \end{ResumeItem}
 \end{document}
