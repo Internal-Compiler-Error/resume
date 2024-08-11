@@ -1,4 +1,4 @@
-\documentclass[letterpaper, 10pt]{article}
+\documentclass[letterpaper, 10pt]{report}
 
 \usepackage[empty]{fullpage}
 \usepackage[letterpaper, margin=0.5in]{geometry}
@@ -15,13 +15,15 @@
 \usepackage[export]{adjustbox}
 \usepackage{pagecolor}
 \usepackage{moresize}
+\usepackage{microtype}
 
 \definecolor{Cream}{HTML}{FEFCF6}
 \definecolor{Cerulean}{HTML}{086788}
 \definecolor{Pink}{HTML}{EF476F}
 \definecolor{Mint}{HTML}{17B890}
 \definecolor{FederalBlue}{HTML}{1A936F}
-\setmainfont{EB Garamond}
+\setmainfont{Noto Sans}
+\setmonofont{Berkeley Mono} 
 
 \hypersetup{
     pdfborder={0 1 1},
@@ -30,11 +32,6 @@
     pdftitle={Liang Wang Resume},
     pdfauthor={Liang Wang},
 }
-
-% \setmonofont{Inconsolata-Medium}[
-%     Extension = .ttf,
-%     Path = static/Inconsolata/
-% ]
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -64,7 +61,7 @@
 \newcommand{\resumeSubheading}[4]{
     % \vspace{-0.6em}
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1}       & #2                 \\
+        \textbf{#1}       & #2                \\
         \textit{\small#3} & \textit{\small#4} \\
     \end{tabular*}\vspace{-0.7em}
 }
@@ -89,14 +86,16 @@
     \end{itemize}}
 
 \newenvironment{ResumeItem}{
-    \vspace{-0.4em}
+    \vspace{-0.3em}
     \begin{itemize}
         \setlength\itemsep{-0.3em}
         }{
     \end{itemize}\vspace{-0.3em}}
 
 % to typeset C++ logo correctly
-\newcommand{\cxx}{C\nolinebreak\hspace{-.05em}\raisebox{0.2ex}{\bf +}\nolinebreak\hspace{-.05em}\raisebox{.2ex}{\bf +}}
+\newcommand{\cxx}{C\nolinebreak\hspace{-.05em}\raisebox{0.03ex}{\bf +}\nolinebreak\hspace{-.05em}\raisebox{.03ex}{\bf +}}
+
+\newcommand{\linkIcon}{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon}}
 
 \pagecolor{Cream}
 \begin{document}
@@ -112,7 +111,7 @@
 
 %-----------EDUCATION-----------
     \section{Education}
-    \resumeSubheading{University of Guelph}{Sep. 2020 -- Apr. 2025 (expected)}{Bachelor of Computing (Co-op Honors), Computer Science, Cumulative GPA: 3.7/4.0 (84.625\%)}{Guelph, ON}
+    \resumeSubheading{University of Guelph}{Sep. 2020 -- Apr. 2025 (expected)}{Bachelor of Computing (Co-op Honors), Computer Science, Minor in Mathematics, Cumulative GPA: 3.7/4.0 (85.1\%)}{Guelph, ON}
 
 
 %-----------TECHNICAL SKILLS-----------
@@ -120,36 +119,44 @@
     \vspace{0.1em}
     \begin{itemize}[leftmargin=0em, label={}]
         \small{\item{
-            \textbf{Languages}{: Rust, Java, \cxx, C, Python, JavaScript, TypeScript, HTML, CSS, SQL} \\
-            \textbf{Frameworks/Libraries}{: Tokio, Serde, Spring, React, React Native, Angular, Node.js, Nestjs, jest, TypeOrm} \\
-            \textbf{Developer Tools}{: Docker, Git, Google Cloud Platform, Firebase, Address Sanitizer, General Unix CLIs} \\
+            \textbf{Languages}{: Rust, Java, C\#, \cxx, C, Python, JavaScript, TypeScript, HTML, CSS, SQL, learning Haskell for fun} \\
+            \textbf{Frameworks/Libraries}{: Tokio, Serde, Spring (Boot), React, React Native, Angular, Node.js, Nestjs, jest, TypeOrm} \\
+            \textbf{Developer Tools}{: Docker, Git, Google Cloud Platform, Firebase, Jenkins, Address Sanitizer, General Unix CLIs, fish shell, PowerShell} \\
         }}
     \end{itemize}
 
 
 %-----------EXPERIENCE-----------
     \section{Experience}
-
+    \resumeSubheading
+    {\color{Black}{Software Developer, Co-op}}{Jan. 2024 -- Apr. 2024}
+    {\href{https://www.magnetforensics.com/}{\linkIcon{} Magnet Forensics}}{Waterloo, ON}
+    \begin{center}
+    \itshape{Working on providing law enforcement and investigators with insights into digital evidence}
+    \end{center}
     \resumeSubheading
     {Undergraduate Research Assistant}{Sep. 2023 -- Dec. 2023}
-    {\href{https://www.uoguelph.ca/computing}{Department of Computer Science}}{Guelph, ON}
-    \begin{center}
-        \textit{Investigation of the effectiveness of UI designs in the presence of situational vision impairments (SVIs), and human perception of contrast and color}
-    \end{center}
+    {\href{https://www.uoguelph.ca/computing}{\linkIcon{} University of Guelph, Department of Computer Science}}{Guelph, ON}
+    \begin{ResumeItem}
+        \item{Developed, performed, and analyzed experiments on correlating display luminance to close up illuminance measurements}
+        \item{Provided rationales on the impossibility of measuring display luminance by placing lux meters against them directly, prevented months of wasted effort}
+        \item{Researched the applicability of Color Appearance Models (CAM) to the problem of Situation Vision Impairment (SVI)}
+    \end{ResumeItem}
+    % \vspace{-0.1em}
 
     \resumeSubheading
     {Software Developer, Co-op}{May. 2023 -- Aug. 2023}
-    {\href{https://kingsds.network/}{Distributive}}{Kingston, ON}
+    {\href{https://kingsds.network/}{\linkIcon{} Distributive}}{Kingston, ON}
     \begin{ResumeItem}
         \item{Worked on a system for allowing edge devices to compute together in parallel, bringing cheap and private computing to the masses}
-        \item{Implemented transparent WebGPU usage metrics tracking system, opening up the ability to utilize web browsers for GPGPU such as AI inferencing}
-        \item{Diagnosed and fixed longstanding concurrency bugs with DB connections, increasing system throughput \emph{up to 10$\times$}}
+        \item{Implemented transparent WebGPU usage metrics tracking system, enabling the use of web browsers for GPGPU such as AI inferencing}
+        \item{Diagnosed and fixed longstanding concurrency bugs with DB connections, increasing system throughput \emph{up to 10\(\times\)}}
         \item{Investigated and repaired flaky tests, reducing CI build time by \emph{up to 20 minutes}}
     \end{ResumeItem}
 
     \resumeSubheading
     {\color{Black}{Software Developer, Co-op}}{Sep. 2022 -- Dec. 2022}
-    {\href{https://www.interac.ca/en/}{Interac}}{Kitchener, ON}
+    {\href{https://www.interac.ca/en/}{\linkIcon{} Interac}}{Kitchener, ON}
     \begin{ResumeItem}
         \item{Developed and tested a minimum viable environment for individuals and financial institutions to securely exchange sensitive data}
         \item{Integrated existing APIs onto a React Native application with the minimum viable environment above}
@@ -159,7 +166,7 @@
 
     \resumeSubheading
     {\color{Black}{Undergraduate Research Assistant}} {Oct. 2021 -- Mar. 2022}
-    {\href{https://www.uoguelph.ca/engineering/}{University of Guelph, Department of Engineering}}{Guelph, ON}
+    {\href{https://www.uoguelph.ca/engineering/}{\linkIcon{} University of Guelph, Department of Engineering}}{Guelph, ON}
 
     \begin{ResumeItem}
         \item{Developed a digital twin solution that allows for real time monitoring of a manufacturing system using \cxx, React, and Firebase to improve observability and prevent malfunctions}
@@ -171,7 +178,7 @@
 
     \resumeSubheading
     {\color{Black}{Software Developer, Co-op}}{Dec. 2018 -- Jun. 2019}
-    {\href{https://www.dmtserv.com/}{DM\&T Service LTD.}}{Richmond Hill, ON}
+    {\href{https://www.dmtserv.com/}{\linkIcon{} DM\&T Service LTD.}}{Richmond Hill, ON}
     \begin{ResumeItem}
         \item{Developed a contact form allowing users to enter their information on a website to be recorded in a database}
         \item{Implemented a full stack application that shows the location and status of 80+ snow removal trucks in real time}
@@ -182,28 +189,30 @@
 %-----------PROJECTS-----------
     \section{Personal Projects}
     \resumeProjectHeading
-    {\textbf{midwest\_mainline} $|$ \emph{Rust, Tokio}}{\href{https://github.com/Internal-Compiler-Error/midwest_mainline}{\textit{{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
+    {\textbf{midwest\_mainline} \(|\) \emph{Rust, Tokio}}{\href{https://github.com/Internal-Compiler-Error/midwest_mainline}{\textit{{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
 
     \begin{ResumeItem}
-        \item{A library implementation of the BitTorrent \href{https://www.bittorrent.org/beps/bep_0005.html}{mainline Distributed Hash Table (DHT)} using fully async network calls}
+        \item{A library implementation of the BitTorrent \href{https://www.bittorrent.org/beps/bep_0005.html}{mainline Distributed Hash Table (DHT)} using fully async network calls, allowing users to partake in a large decentralized system to look for Bittorrent peers}
         \item{Performs \texttt{ping}, \texttt{find\_node}, \texttt{get\_peers}, and \texttt{announce\_peer} RPCs, conforming to the specification}
         \item{Provides basic mitigation against malicious requests and denial of service attacks by strictly specifying allowed message variants, and using bounded channels}
     \end{ResumeItem}
 
-    \resumeProjectHeading
-    {\textbf{Argon} $|$ \emph{\cxx 17, GTK(gtkmm), httplib, CMake}}{\href{https://github.com/Internal-Compiler-Error/Argon}{\textit{{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
-    \begin{ResumeItem}
-        \item{Speeds up HTTP(S) downloads from default browser behaviour}
-        \item{Splits downloads into multiple segments to perform in parallel, bypassing throttling and exploiting modern hardware}
-        \item{Able to fully saturate system bandwidth due to each segment being processed by different cores with almost no locks required}
-    \end{ResumeItem}
+    % \resumeProjectHeading
+    % {\textbf{Argon} \(|\) \emph{\cxx 17, GTK(gtkmm), httplib, CMake}}{\href{https://github.com/Internal-Compiler-Error/Argon}{\textit{{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
+    % \vspace{0.2em}
+    % \begin{ResumeItem}
+    %     \item{Speeds up HTTP(S) downloads from default browser behaviour}
+    %     \item{Splits downloads into multiple segments to perform in parallel, bypassing throttling and exploiting modern hardware}
+    %     \item{Able to fully saturate system bandwidth due to each segment being processed by different cores with almost no locks required}
+    % \end{ResumeItem}
 
 
     % \resumeProjectHeading
-    % {\textbf{ePortfolio} $|$ \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\itshape\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}
+    % {\textbf{ePortfolio} \(|\) \emph{Java, Swing, Gradle}}{\href{https://github.com/Internal-Compiler-Error/ePortfolio}{\itshape\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}
+    % \vspace{0.2em}
     % \begin{ResumeItem}
     %     \item{Allows user to manage their mutual fund and stocks, supporting creating, querying, updating and deleting investments in a GUI application}
-    %     \item{Querying is backed by an index to achieve amortized $O(|Q| + |W|)$ look up where $Q$ is the set of words in the query and $W$ is the set of investments containing words in $K$}
+    %         % \item{Querying is backed by an index to achieve amortized \(O(|Q| + |W|)\) look up where \(Q\) is the set of words in the query and \(W\) is the set of investments containing words in \(K\)}
     %     \item{Utilized OOP techniques such as polymorphism, inheritance, composition and encapsulation to reduce duplicate code and improve logic flow}
     % \end{ResumeItem}
 \end{document}
