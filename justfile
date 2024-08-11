@@ -1,3 +1,3 @@
 build:
     # tectonic -X compile --untrusted  src/Liang-Wang-Resume.tex -o out
-    xelatex src/Liang-Wang-Resume.tex -output-dir=out
+    xelatex -output-directory=./out src/Liang-Wang-Resume.tex
