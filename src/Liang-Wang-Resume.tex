@@ -15,14 +15,20 @@
 \usepackage[export]{adjustbox}
 \usepackage{pagecolor}
 \usepackage{moresize}
-\usepackage{microtype}
+\usepackage[final]{microtype}
 
 \definecolor{Cream}{HTML}{FEFCF6}
 \definecolor{Cerulean}{HTML}{086788}
 \definecolor{Pink}{HTML}{EF476F}
 \definecolor{Mint}{HTML}{17B890}
 \definecolor{FederalBlue}{HTML}{1A936F}
-\setmainfont{Noto Sans}
+\setmainfont[
+    Path = fonts/NotoSans/static/,
+    UprightFont = *-Regular.ttf,
+    BoldFont = *-Bold.ttf,
+    ItalicFont = *-Italic.ttf,
+    BoldItalicFont = *-BoldItalic.ttf
+]{NotoSans_Condensed}
 \setmonofont{Berkeley Mono} 
 
 \hypersetup{
