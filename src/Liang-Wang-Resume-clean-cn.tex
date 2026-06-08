@@ -1,0 +1,215 @@
+\documentclass[letterpaper, 10pt]{report}
+
+\usepackage[empty]{fullpage}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+% \usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[no-math]{fontspec}
+\usepackage{xeCJK}
+
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{pagecolor}
+\usepackage{moresize}
+\usepackage[final]{microtype}
+\usepackage{anyfontsize}
+
+\definecolor{Cream}{HTML}{FEFCF6}
+\definecolor{Cerulean}{HTML}{086788}
+\definecolor{Pink}{HTML}{EF476F}
+\definecolor{Mint}{HTML}{17B890}
+\definecolor{FederalBlue}{HTML}{1A936F}
+
+\setCJKmainfont{Noto Sans CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setmainfont{NotoSans_Condensed}[
+    Path = ./fonts/NotoSans/static/,
+    UprightFont = *-Regular.ttf,
+    BoldFont = *-Bold.ttf,
+    ItalicFont = *-Italic.ttf,
+    BoldItalicFont = *-BoldItalic.ttf
+]
+\setmonofont{Berkeley Mono}
+
+\hypersetup{
+    pdfborder={0 1 1},
+    colorlinks=true,
+    urlcolor=FederalBlue,
+    pdftitle={Liang Wang Resume},
+    pdfauthor={Liang Wang},
+    pdfcreator={Liang Wang},
+    pdfsubject={Resume},
+    pdfproducer={XeLaTeX},
+    pdfkeywords={Rust, Java, C\#, C++, C, Python, JavaScript, TypeScript, HTML, CSS, SQL, Haskell, Full-Stack, Backend, Docker, Git, Google Cloud Platform, Firebase, Jenkins, Address Sanitizer, General Unix CLIs, Fish Shell, PowerShell}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+
+\renewcommand{\headrulewidth}{0em}
+\renewcommand{\footrulewidth}{0em}
+
+\graphicspath{{img/}}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{3.60004pt}
+
+\titleformat
+{\section}
+{\color{Cerulean}\vspace{-1em}\bfseries\raggedright\Large}
+{}
+{0em}
+{}
+[\color{Black}\titlerule\vspace{-0.5em}]
+
+\newcommand{\educationEntry}[4]{
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}       & #2                \\
+        \textit{\small#3} & \textit{\small#4} \\
+    \end{tabular*}\vspace{-0.7em}
+}
+
+\newcommand{\workEntry}[4]{
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#3}       & #2                \\
+        \textit{\small#1} & \textit{\small#4} \\
+    \end{tabular*}\vspace{-0.7em}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{\small#1} & \textit{\small#2} \\
+    \end{tabular*}\vspace{-0.7em}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+        \small#1 & #2 \\
+    \end{tabular*}\vspace{-1.5em}
+}
+
+\newenvironment{SubHeading}{
+    \begin{itemize}[leftmargin=0.15in]
+        \setlength\itemsep{-0.3em}
+        }{
+    \end{itemize}}
+
+\newenvironment{ResumeItem}{
+    \vspace{-0.3em}
+    \begin{itemize}
+        \setlength\itemsep{-0.3em}
+        }{
+    \end{itemize}\vspace{-0.3em}}
+
+\newcommand{\cxx}{C\nolinebreak\hspace{-.05em}\raisebox{0.03ex}{\bf +}\nolinebreak\hspace{-.05em}\raisebox{.03ex}{\bf +}}
+
+\newcommand{\linkIcon}{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{./img/link-icon}}
+
+\pagecolor{Cream}
+\begin{document}
+
+\begin{center}
+    \textbf{\HUGE\color{Pink}{Liang Wang}} \\ \vspace{1.5em}
+    \small Guelph, ON（可立即到岗 / 搬迁） |
+    +1 647-785-5604 |
+    \href{mailto:me@liangw.com}{{me@liangw.com}} |
+    \href{https://github.com/Internal-Compiler-Error}{{GitHub}} |
+    \href{https://www.linkedin.com/in/liang-wang-225607174/}{{LinkedIn}} |
+    \href{https://liangw.com}{{个人博客}} \\
+\end{center}
+
+%-----------EDUCATION-----------
+\section{教育背景}
+\educationEntry{University of Guelph}{2020.09 -- 2025.04}{计算机科学荣誉学士（Co-op），辅修数学}{Guelph, ON}
+
+%-----------TECHNICAL SKILLS-----------
+\section{技术栈}
+\vspace{0.1em}
+\begin{itemize}[leftmargin=0em, label={}]
+    \small{\item{
+        \textbf{编程语言}{: Java, C\#, C++, C, Python, JavaScript, TypeScript, HTML, CSS, SQL, Rust} \\
+        \textbf{框架 / 库}{: Spring Boot, .NET, WPF, React, React Native, Angular, Node.js, NestJS, Jest, TypeORM, Tokio, Serde} \\
+        \textbf{数据库 / 中间件}{: MySQL, Postgres} \\
+        \textbf{工程化 / 平台}{: Docker, Git, Jenkins, Google Cloud Platform, Firebase, Address Sanitizer, Unix CLI, fish shell, PowerShell} \\
+    }}
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{实习经历}
+\workEntry
+{软件工程实习生}{2024.05 -- 2024.08}
+{\href{https://distributive.network/}{\linkIcon{} Distributive Corp.}}{Kingston, ON}
+\begin{ResumeItem}
+    \item{负责核心 API 服务负载均衡系统的设计、开发、测试与文档沉淀，支撑服务侧扩展与稳定运行}
+    \item{排查数据库死锁事故，定位根因并输出 \linkIcon{}
+        \href{https://liangw.com/mysql-read-commited-gap-lock.html}{技术分析报告}，沉淀线上问题诊断经验}
+    \item{修复数据库表规模增长导致的接口性能退化问题，显著降低平均响应耗时，单次请求最高可缩短数秒}
+\end{ResumeItem}
+
+\workEntry
+{软件工程实习生}{2024.01 -- 2024.04}
+{\href{https://www.magnetforensics.com/}{\linkIcon{} Magnet Forensics}}{Waterloo, ON}
+\begin{ResumeItem}
+    \item{开发并集成 Discord 数据导入与分析能力，支持对执法取证令返回数据的处理}
+    \item{实现从磁盘镜像中提取受 Microsoft 账户保护的 Chrome Cookie、历史记录及其他用户数据的能力，并支持已知密码场景}
+    \item{重构多个产品中的共用逻辑，推动代码复用，并与多个团队协作完成兼容性验证}
+    \item{扩展对 macOS、iOS、Android 原生加密 Chrome 用户数据的提取支持，完善多平台覆盖能力}
+\end{ResumeItem}
+
+\workEntry
+{软件工程实习生}{2023.05 -- 2023.08}
+{\href{https://distributive.network/}{\linkIcon{} Distributive Corp.}}{Kingston, ON}
+\begin{ResumeItem}
+    \item{参与边缘设备并行协同计算系统开发，支撑低成本、强隐私的分布式算力场景}
+    \item{实现 WebGPU 使用指标透明采集系统，为浏览器侧 GPGPU 场景提供可观测性支持，包括 AI 推理等应用}
+    \item{定位并修复长期存在的数据库连接并发缺陷，系统吞吐量最高提升 10 倍}
+    \item{排查并修复不稳定测试用例，CI 构建耗时最高缩短 20 分钟，提升研发效率}
+\end{ResumeItem}
+
+\workEntry
+{软件工程实习生}{2022.09 -- 2022.12}
+{\href{https://www.interac.ca/en/}{\linkIcon{} Interac}}{Kitchener, ON}
+\begin{ResumeItem}
+    \item{开发并测试敏感数据安全交换的最小可行环境，支持个人与金融机构之间的安全数据流转}
+    \item{将现有 API 集成至 React Native 应用，完成端到端流程打通}
+    \item{研究并开发基于区块链的原型系统，探索退税与福利数字化方案，以提升准确性并降低成本}
+\end{ResumeItem}
+
+\workEntry
+{本科研究助理}{2021.10 -- 2022.03}
+{\href{https://www.uoguelph.ca/engineering/}{\linkIcon{} University of Guelph}}{Guelph, ON}
+\begin{ResumeItem}
+    \item{使用 C++、React 与 Google Cloud Services 开发制造系统数字孪生方案，实现实时监控与状态可视化}
+    \item{搭建基于 React 的监控仪表盘，提升制造系统运行状态的可观测性，辅助故障预防}
+\end{ResumeItem}
+
+%-----------PROJECTS-----------
+\section{项目经历}
+\resumeProjectHeading
+{\textbf{midwest\_mainline} \(|\) \emph{Rust, Tokio}}{\href{https://github.com/Internal-Compiler-Error/midwest_mainline}{\textit{{\includegraphics[height=9pt, trim=0 5cm 0 -1.5cm]{link-icon} Repository}}}}
+
+\begin{ResumeItem}
+    \item{基于 Rust 与全异步网络 IO 实现 BitTorrent \href{https://www.bittorrent.org/beps/bep_0005.html}{\linkIcon{} mainline Distributed Hash Table (DHT)} 库，支持参与大规模去中心化网络并发现 BitTorrent 对等节点}
+    \item{实现 \texttt{ping}、\texttt{find\_node}、\texttt{get\_peers}、\texttt{announce\_peer} 等核心 RPC，符合协议规范}
+    \item{通过限制允许的消息类型与使用有界通道，提供对恶意请求与拒绝服务攻击的基础防护能力}
+\end{ResumeItem}
+
+\textcolor{Cream}{\fontsize{0.1pt}{0.1pt}\selectfont%
+%
+岗位匹配
+%
+具备扎实的问题分析与工程落地能力，熟悉算法、数据结构与复杂度分析
+有分布式系统、并发、数据库性能与可观测性相关实践经验
+具备较强的 ownership、协作意识与工程质量意识
+关注可维护性、可复用性与长期演进成本
+}
+\end{document}
